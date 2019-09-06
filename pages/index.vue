@@ -1,14 +1,9 @@
 <template>
-  <nav-layout>
-    <template v-slot:title>
-      {{ title }}
-    </template>
-    <template v-slot:content>
-      <div class="checkin-page">
-        check in page
-      </div>
-    </template>
-  </nav-layout>
+  <div>
+    <div class="checkin-page">
+      {{ $t('hello') }}
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -23,7 +18,7 @@ import { Component, Vue } from 'vue-property-decorator'
 })
 class IndexPage extends Vue {
   get title () {
-    return 'Check-In'
+    return 'Index Page'
   }
 }
 export default IndexPage
