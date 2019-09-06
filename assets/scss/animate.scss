@@ -1,0 +1,26 @@
+// zoom transition
+.zoom-enter-active {
+  animation: zoomIn 0.4s;
+}
+
+.zoom-leave-active {
+  animation: zoomIn 0.4s reverse;
+}
+
+// fade transition
+.fade-enter-active {
+  animation: fadeIn 0.4s;
+}
+
+.fade-leave-active {
+  animation: fadeIn 0.4s reverse;
+}
+
+// slide transition
+.slide-enter-active {
+  animation: slideInUp 0.4s;
+}
+
+.slide-leave-active {
+  animation: slideInUp 0.4s reverse;
+}
