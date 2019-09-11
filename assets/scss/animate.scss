@@ -1,3 +1,15 @@
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s;
+  transition-duration: .2s;
+  animation-duration: .2s;
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0;
+  transition-duration: .2s;
+  animation-duration: .2s;
+}
+
 // zoom transition
 .zoom-enter-active {
   animation: zoomIn 0.4s;

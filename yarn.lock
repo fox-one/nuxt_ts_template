@@ -711,6 +711,11 @@
     js-yaml "^3.13.1"
     json5 "^2.1.0"
 
+"@mdi/js@^4.3.95":
+  version "4.3.95"
+  resolved "https://registry.npm.taobao.org/@mdi/js/download/@mdi/js-4.3.95.tgz#79e3253eeaa6e0cf02733c4c1f65c801d9d4b42c"
+  integrity sha1-eeMlPuqm4M8CczxMH2XIAdnUtCw=
+
 "@nuxt/babel-preset-app@2.9.2":
   version "2.9.2"
   resolved "https://registry.npm.taobao.org/@nuxt/babel-preset-app/download/@nuxt/babel-preset-app-2.9.2.tgz#e8d2ac841db845ef88ca2687093a95a480106e5d"
@@ -1623,6 +1628,11 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/amdefine/download/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
+
+animate.css@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.npm.taobao.org/animate.css/download/animate.css-3.7.2.tgz#e73e0d50e92cb1cfef1597d9b38a9481020e08ea"
+  integrity sha1-5z4NUOkssc/vFZfZs4qUgQIOCOo=
 
 ansi-align@^2.0.0:
   version "2.0.0"

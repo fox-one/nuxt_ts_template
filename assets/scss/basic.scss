@@ -1,15 +1,3 @@
-.page-enter-active, .page-leave-active {
-  transition: opacity .2s;
-  transition-duration: .2s;
-  animation-duration: .2s;
-}
-
-.page-enter, .page-leave-active {
-  opacity: 0;
-  transition-duration: .2s;
-  animation-duration: .2s;
-}
-
 html, body, #__nuxt, #__layout {
   margin: 0;
   height: 100%;
@@ -32,15 +20,4 @@ span, div, p, a {
   margin: 0;
   outline: none!important;
   -webkit-tap-highlight-color: transparent;
-}
-
-.v-application {
-  font-family: SF UI Display, Helvetica, Arial, ubuntu, sans-serif!important;
-  background:  linear-gradient(180deg, #474958 0%, #1D202A 100%)!important;
-  color: #fff;
-  font-size: 16px;
-
-  .v-application--wrap {
-    min-height: 100% !important;
-  }
 }

@@ -33,6 +33,7 @@ const config: Configuration = {
    */
   plugins: [
     { src: '~/plugins/globalComponents.ts' },
+    { src: '~/plugins/globalProperty.ts' },
     { src: '~plugins/vue-lazyload.ts', ssr: false }
   ],
   /*
@@ -45,10 +46,10 @@ const config: Configuration = {
         typeCheck: true,
         ignoreNotFoundWarnings: true
       }
-    ]
+    ],
+    '@nuxtjs/vuetify'
   ],
   modules: [
-    '@nuxtjs/vuetify',
     '@nuxtjs/axios',
     '@nuxtjs/eslint-module',
     [
@@ -68,7 +69,7 @@ const config: Configuration = {
   vuetify: {
     defaultAssets: false,
     treeShake: true,
-    optionsPath: './vuetify.options.js'
+    optionsPath: './vuetify.options.ts'
   },
   build: {
     transpile: ['vuetify'],
@@ -85,7 +86,7 @@ const config: Configuration = {
         ]
       ]
     },
-    extend () {}
+    extend() {}
   }
 }
 

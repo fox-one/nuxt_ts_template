@@ -1,6 +1,12 @@
 export default {
   breakpoint: {},
-  icons: {},
+  icons: {
+    iconfont: 'mdiSvg'
+  },
   lang: {},
-  theme: {}
+  theme: {
+    options: {
+      customProperties: true
+    }
+  }
 }
