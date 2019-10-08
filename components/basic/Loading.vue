@@ -18,7 +18,7 @@
       </template>
     </div>
     <transition name="fade">
-      <div v-show="mask && loading" class="loading-mask"></div>
+      <div v-show="mask && loading" class="loading-mask" />
     </transition>
   </div>
 </template>
