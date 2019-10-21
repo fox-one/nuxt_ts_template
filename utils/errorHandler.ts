@@ -1,22 +1,17 @@
 import $t from '@/utils/$t'
 
-interface IError {
+export interface IError {
   code?: string | number
-  msg?: string
+  message?: string
   fallback?: string
 }
 
-export default (
-  toast: any,
-  { code = '', msg = '', fallback = $t('errorcode.fallback') }: IError
-) => {
+export default ($toast: Function, error: IError) => {
+  const fallback = $t('errorcode.fallback')
+  let { code = '', message = fallback } = error
   if (code) {
-    if ($t(`errorcode.${code}`) !== `errorcode.${code}`) {
-      toast($t(`errorcode.${code}`))
-    } else {
-      msg ? toast(msg) : toast(fallback)
-    }
-  } else {
-    toast.fail(fallback)
+    const key = `errorcode.${code}`
+    message = $t(key) === key ? message : `${code}: ${$t(key)}`
   }
+  $toast({ message, color: 'error' })
 }

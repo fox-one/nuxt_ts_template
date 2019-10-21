@@ -1,15 +1,14 @@
 import 'nuxt-i18n'
+import { IError } from '@/utils/errorHandler'
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $velocity: any
     title?: any
-    $errorHandler?: any
+    $errorHandler: ($toast: Function, error: IError) => {}
+    $toast: (data: { message: string; color: string }) => {}
   }
 
   interface VueConstructor {
-    $velocity: any
     title?: any
-    $errorHandler?: any
   }
 }

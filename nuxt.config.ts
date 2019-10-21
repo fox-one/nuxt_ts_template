@@ -20,25 +20,13 @@ const config: Configuration = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  /*
-   ** Customize the progress-bar color
-   */
   loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
   css: ['@/assets/scss/index.scss'],
-  /*
-   ** Plugins to load before mounting the App
-   */
   plugins: [
-    { src: '~/plugins/globalComponents.ts' },
-    { src: '~/plugins/globalProperty.ts' },
-    { src: '~plugins/vue-lazyload.ts', ssr: false }
+    '~/plugins/globalComponents.ts',
+    '~/plugins/globalProperty.ts',
+    { src: '~/plugins/mock.ts', ssr: false }
   ],
-  /*
-   ** Nuxt.js modules
-   */
   buildModules: [
     [
       '@nuxt/typescript-build',
@@ -65,7 +53,6 @@ const config: Configuration = {
       }
     ]
   ],
-  axios: {},
   vuetify: {
     defaultAssets: false,
     treeShake: true,
@@ -73,20 +60,11 @@ const config: Configuration = {
   },
   build: {
     transpile: ['vuetify'],
-    babel: {
-      plugins: [
-        [
-          'import',
-          {
-            libraryName: 'vant',
-            libraryDirectory: 'es',
-            style: true
-          },
-          'vant'
-        ]
-      ]
-    },
     extend() {}
+  },
+  env: {
+    TOKEN: process.env.TOKEN || '',
+    APP_ENV: process.env.APP_ENV || ''
   }
 }
 
