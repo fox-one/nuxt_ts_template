@@ -1,5 +1,6 @@
 import { Configuration } from '@nuxt/types'
 import i18n from './i18n'
+import { isProduct, GA } from './constants'
 
 const config: Configuration = {
   mode: 'spa',
@@ -28,6 +29,7 @@ const config: Configuration = {
     { src: '~/plugins/mock.ts', ssr: false }
   ],
   buildModules: [
+    '@nuxtjs/eslint-module',
     [
       '@nuxt/typescript-build',
       {
@@ -39,13 +41,14 @@ const config: Configuration = {
   ],
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/dotenv',
     [
       'nuxt-i18n',
       {
         vueI18n: i18n,
         locales: ['en', 'zh'],
-        defaultLocale: 'zh',
+        defaultLocale: 'en',
         strategy: 'prefix_and_default',
         detectBrowserLanguage: false,
         parsePages: false,
@@ -53,7 +56,16 @@ const config: Configuration = {
       }
     ]
   ],
+  googleAnalytics: {
+    id: '',
+    dev: false,
+    debug: {
+      enabled: !isProduct,
+      sendHitTask: isProduct
+    }
+  },
   vuetify: {
+    customVariables: ['~/assets/scss/variables.scss'],
     defaultAssets: false,
     treeShake: true,
     optionsPath: './vuetify.options.ts'

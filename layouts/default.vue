@@ -31,6 +31,7 @@ import { Mutation, State } from 'vuex-class'
 @Component
 class DefaultLayout extends Vue {
   @State(state => state.app.snackbar) bindSnackbar
+
   @Mutation('app/setSnackbar') setSnackbar
 
   get snackbar () {
