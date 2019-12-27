@@ -21,7 +21,7 @@
   "dependencies": {
     "@mdi/js": "^4.4.95",
     "@nuxt/typescript-runtime": "^0.1.5",
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/axios": "5.8.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.2.2",
     "animate.css": "^3.7.2",

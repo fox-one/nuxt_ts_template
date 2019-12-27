@@ -4,9 +4,5 @@ export default {
     iconfont: 'mdiSvg'
   },
   lang: {},
-  theme: {
-    options: {
-      customProperties: true
-    }
-  }
+  theme: {}
 }
