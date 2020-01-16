@@ -27,7 +27,7 @@
     "animate.css": "^3.7.2",
     "mockjs": "^1.0.1-beta3",
     "nuxt": "^2.0.0",
-    "nuxt-i18n": "6.0.0",
+    "nuxt-i18n": "^6.4.1",
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.2.2",
     "vuetify": "^2.1.5",

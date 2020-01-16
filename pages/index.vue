@@ -98,6 +98,7 @@ import { getUser } from '@/services/api'
 import { IUser } from '@/services/interface'
 
 @Component({
+  middleware: 'i18n',
   head () {
     return {
       title: this.title
