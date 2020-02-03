@@ -1,12 +1,13 @@
 import { Configuration } from '@nuxt/types'
-import i18n from './i18n'
-import { isProduct, GA } from './constants'
+import i18n from './src/i18n'
+import { isProduct, GA } from './src/constants'
 
 const config: Configuration = {
   mode: 'spa',
   router: {
     mode: 'hash'
   },
+  srcDir: './src',
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -22,11 +23,10 @@ const config: Configuration = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#fff' },
-  css: ['@/assets/scss/index.scss'],
+  css: ['~/styles/index.scss'],
   plugins: [
     '~/plugins/globalComponents.ts',
-    '~/plugins/globalProperty.ts',
-    { src: '~/plugins/mock.ts', ssr: false }
+    '~/plugins/globalProperty.ts'
   ],
   buildModules: [
     '@nuxtjs/eslint-module',
@@ -48,7 +48,7 @@ const config: Configuration = {
       {
         vueI18n: i18n,
         locales: ['en', 'zh'],
-        defaultLocale: 'en',
+        defaultLocale: 'zh',
         strategy: 'no_prefix',
         detectBrowserLanguage: false,
         parsePages: false,
@@ -65,7 +65,7 @@ const config: Configuration = {
     }
   },
   vuetify: {
-    customVariables: ['~/assets/scss/variables.scss'],
+    customVariables: ['~/styles/variables.scss'],
     defaultAssets: false,
     treeShake: true,
     optionsPath: './vuetify.options.ts'
