@@ -1,16 +1,13 @@
 <template>
-  <v-content>
-    <v-container>
-      <h1>HELLO</h1>
-    </v-container>
-  </v-content>
+  <v-container>
+    <h1>HELLO</h1>
+  </v-container>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component({
-  middleware: 'i18n',
   head () {
     return {
       title: this.title

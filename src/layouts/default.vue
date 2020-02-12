@@ -24,7 +24,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-@Component
+@Component({
+  middleware: 'i18n'
+})
 class DefaultLayout extends Vue {}
 export default DefaultLayout
 </script>
