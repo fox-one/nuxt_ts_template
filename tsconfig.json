@@ -26,6 +26,7 @@
       ]
     },
     "types": [
+      "nuxt-i18n",
       "@types/node",
       "@nuxt/types",
     ]
