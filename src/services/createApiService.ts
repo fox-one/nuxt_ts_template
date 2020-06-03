@@ -30,7 +30,7 @@ function generateStructureInterceptor (app: NuxtAppOptions) {
 function generateAuthInterceptor (app: NuxtAppOptions) {
   return [
     (configs) => {
-      const token = app.store!.state.getters['auth/getToken']
+      const token = app.store!.getters['auth/getToken']
       if (token) {
         configs.headers.Authorization = `Bearer ${token}`
       }
