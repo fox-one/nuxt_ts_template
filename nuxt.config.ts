@@ -25,8 +25,8 @@ const config: Configuration = {
   loading: { color: '#fff' },
   css: ['~/styles/index.scss'],
   plugins: [
-    '~/plugins/globalComponents.ts',
-    '~/plugins/globalProperty.ts'
+    '~/plugins/components.ts',
+    '~/plugins/property.ts'
   ],
   buildModules: [
     '@nuxtjs/eslint-module',
