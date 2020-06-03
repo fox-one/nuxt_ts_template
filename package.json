@@ -31,7 +31,8 @@
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.2.2",
     "vuetify": "^2.1.5",
-    "vuex-class": "^0.3.2"
+    "vuex-class": "^0.3.2",
+    "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.2.6",

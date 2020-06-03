@@ -26,7 +26,8 @@ const config: Configuration = {
   css: ['~/styles/index.scss'],
   plugins: [
     '~/plugins/components.ts',
-    '~/plugins/property.ts'
+    '~/plugins/property.ts',
+    '~/plugins/persistedstate.ts'
   ],
   buildModules: [
     '@nuxtjs/eslint-module',
