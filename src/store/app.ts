@@ -1,4 +1,5 @@
 export const state = () => ({
+  dark: false,
   snackbar: {
     show: false,
     message: '',

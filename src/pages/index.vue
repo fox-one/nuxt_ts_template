@@ -1,6 +1,9 @@
 <template>
   <v-container>
     <h1>HELLO</h1>
+    <f-tip type="info">
+      this a tip
+    </f-tip>
   </v-container>
 </template>
 

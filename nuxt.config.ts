@@ -27,6 +27,7 @@ const config: Configuration = {
   plugins: [
     '~/plugins/components.ts',
     '~/plugins/property.ts',
+    '~/plugins/libs.ts',
     '~/plugins/persistedstate.ts'
   ],
   buildModules: [

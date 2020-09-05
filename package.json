@@ -19,8 +19,9 @@
     "generate": "nuxt-ts generate"
   },
   "dependencies": {
+    "@foxone/uikit": "^1.1.5",
     "@mdi/js": "^4.4.95",
-    "@nuxt/typescript-runtime": "^0.1.5",
+    "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "5.8.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.2.2",
@@ -35,11 +36,14 @@
     "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.2.6",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@nuxt/types": "^2.14.4",
+    "@nuxt/typescript-build": "^2.0.3",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-config-typescript": "^0.1.2",
     "@nuxtjs/eslint-module": "^0.0.1",
-    "@nuxtjs/vuetify": "^1.9.0",
+    "@nuxtjs/vuetify": "^1.11.2",
     "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.12.1",
     "eslint": "^6.7.2",
