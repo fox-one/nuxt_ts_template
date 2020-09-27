@@ -8,21 +8,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue } from "vue-property-decorator";
 
 @Component({
-  head () {
+  head() {
     return {
-      title: this.title
-    }
-  }
+      title: this.title,
+    };
+  },
 })
 class IndexPage extends Vue {
-  get title () {
-    return 'hello'
+  get title() {
+    return "hello";
   }
 }
-export default IndexPage
+export default IndexPage;
 </script>
 
 <style lang="scss" scoped></style>

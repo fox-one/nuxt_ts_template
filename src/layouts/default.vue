@@ -22,14 +22,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue } from "vue-property-decorator";
 
 @Component({
-  middleware: 'i18n'
+  middleware: "i18n",
 })
 class DefaultLayout extends Vue {}
-export default DefaultLayout
+export default DefaultLayout;
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
