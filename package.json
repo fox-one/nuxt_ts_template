@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "nuxt template starter",
   "author": "divisey",
+  "license": "MIT",
   "private": true,
   "config": {
     "nuxt": {
