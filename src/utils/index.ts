@@ -1,5 +1,5 @@
-import * as helper from './helper'
+import * as helper from "./helper";
 
 export default {
-  helper
-}
+  helper,
+};

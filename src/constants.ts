@@ -1,5 +1,5 @@
-export const isProduct = process.env.APP_ENV === 'prod'
+export const isProduct = process.env.APP_ENV === "prod";
 
-export const GA = ''
+export const GA = "";
 
-export const API_BASE = ''
+export const API_BASE = "";

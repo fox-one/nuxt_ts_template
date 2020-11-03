@@ -1,9 +1,9 @@
-import Http from '@/services/http'
+import Http from "@/services/http";
 
-export default function (http: Http) {
+export default function(http: Http) {
   return {
-    getPublic () {
-      return http.get('/public')
-    }
-  }
+    getPublic() {
+      return http.get("/public");
+    },
+  };
 }

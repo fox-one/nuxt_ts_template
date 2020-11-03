@@ -1,85 +1,88 @@
-import { Configuration } from '@nuxt/types'
-import i18n from './src/i18n'
-import { isProduct, GA } from './src/constants'
+import { NuxtConfig } from "@nuxt/types";
+import i18n from "./src/i18n";
+import { isProduct, GA } from "./src/constants";
 
-const config: Configuration = {
-  mode: 'spa',
+const config: NuxtConfig = {
+  mode: "spa",
   router: {
-    mode: 'hash'
+    mode: "hash",
   },
-  srcDir: './src',
+  srcDir: "./src",
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    titleTemplate: "%s - " + process.env.npm_package_name,
+    title: process.env.npm_package_name || "",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no' },
+      { charset: "utf-8" },
       {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no",
+      },
+      {
+        hid: "description",
+        name: "description",
+        content: process.env.npm_package_description || "",
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  loading: { color: '#fff' },
-  css: ['~/styles/index.scss'],
+  loading: { color: "#fff" },
+  css: ["~/styles/index.scss"],
   plugins: [
-    '~/plugins/components.ts',
-    '~/plugins/property.ts',
-    '~/plugins/libs.ts',
-    '~/plugins/persistedstate.ts'
+    "~/plugins/components.ts",
+    "~/plugins/property.ts",
+    "~/plugins/libs.ts",
+    "~/plugins/persistedstate.ts",
   ],
   buildModules: [
-    '@nuxtjs/eslint-module',
+    "@nuxtjs/eslint-module",
     [
-      '@nuxt/typescript-build',
+      "@nuxt/typescript-build",
       {
         typeCheck: true,
-        ignoreNotFoundWarnings: true
-      }
+        ignoreNotFoundWarnings: true,
+      },
     ],
-    '@nuxtjs/vuetify'
+    "@nuxtjs/vuetify",
   ],
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/dotenv',
+    "@nuxtjs/axios",
+    "@nuxtjs/google-analytics",
+    "@nuxtjs/dotenv",
     [
-      'nuxt-i18n',
+      "nuxt-i18n",
       {
         vueI18n: i18n,
-        locales: ['en', 'zh'],
-        defaultLocale: 'en',
-        strategy: 'no_prefix',
+        locales: ["en", "zh"],
+        defaultLocale: "en",
+        strategy: "no_prefix",
         detectBrowserLanguage: false,
         parsePages: false,
-        seo: false
-      }
-    ]
+        seo: false,
+      },
+    ],
   ],
   googleAnalytics: {
     id: GA,
     dev: false,
     debug: {
       enabled: !isProduct,
-      sendHitTask: isProduct
-    }
+      sendHitTask: isProduct,
+    },
   },
   vuetify: {
-    customVariables: ['~/styles/variables.scss'],
+    customVariables: ["~/styles/variables.scss"],
     defaultAssets: false,
     treeShake: true,
-    optionsPath: './vuetify.options.ts'
+    optionsPath: "./vuetify.options.ts",
   },
   build: {
-    transpile: ['vuetify'],
-    extend () {}
+    transpile: ["vuetify"],
   },
   env: {
-    TOKEN: process.env.TOKEN || '',
-    APP_ENV: process.env.APP_ENV || ''
-  }
-}
+    TOKEN: process.env.TOKEN || "",
+    APP_ENV: process.env.APP_ENV || "",
+  },
+};
 
-export default config
+export default config;

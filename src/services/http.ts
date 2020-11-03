@@ -1,69 +1,69 @@
-import axios, { AxiosRequestConfig, AxiosInstance } from 'axios'
+import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
 
 export default class Http {
-  instance: AxiosInstance
+  instance: AxiosInstance;
 
-  constructor (defaults, requestInterceptors, responseInterceptors) {
-    this.instance = axios.create(defaults)
+  constructor(defaults, requestInterceptors, responseInterceptors) {
+    this.instance = axios.create(defaults);
     for (const interceptor of requestInterceptors) {
-      this.instance.interceptors.request.use(...interceptor)
+      this.instance.interceptors.request.use(...interceptor);
     }
     for (const interceptor of responseInterceptors) {
-      this.instance.interceptors.response.use(...interceptor)
+      this.instance.interceptors.response.use(...interceptor);
     }
   }
 
-  config (options: AxiosRequestConfig) {
-    this.instance.defaults.baseURL = options.baseURL
+  config(options: AxiosRequestConfig) {
+    this.instance.defaults.baseURL = options.baseURL;
   }
 
-  async request (options: AxiosRequestConfig): Promise<any> {
-    const res = await this.instance.request(options)
-    return Promise.resolve(res)
+  async request(options: AxiosRequestConfig): Promise<any> {
+    const res = await this.instance.request(options);
+    return Promise.resolve(res);
   }
 
-  post (url: string, options: AxiosRequestConfig = {}) {
+  post(url: string, options: AxiosRequestConfig = {}) {
     const config = {
       url,
-      method: 'post',
-      ...options
-    } as AxiosRequestConfig
-    return this.request(config)
+      method: "post",
+      ...options,
+    } as AxiosRequestConfig;
+    return this.request(config);
   }
 
-  put (url: string, options: AxiosRequestConfig = {}) {
+  put(url: string, options: AxiosRequestConfig = {}) {
     const config = {
       url,
-      method: 'put',
-      ...options
-    } as AxiosRequestConfig
-    return this.request(config)
+      method: "put",
+      ...options,
+    } as AxiosRequestConfig;
+    return this.request(config);
   }
 
-  patch (url: string, options: AxiosRequestConfig = {}) {
+  patch(url: string, options: AxiosRequestConfig = {}) {
     const config = {
       url,
-      method: 'patch',
-      ...options
-    } as AxiosRequestConfig
-    return this.request(config)
+      method: "patch",
+      ...options,
+    } as AxiosRequestConfig;
+    return this.request(config);
   }
 
-  get (url: string, options: AxiosRequestConfig = {}): Promise<any> {
+  get(url: string, options: AxiosRequestConfig = {}): Promise<any> {
     const config = {
       url,
-      method: 'get',
-      ...options
-    } as AxiosRequestConfig
-    return this.request(config)
+      method: "get",
+      ...options,
+    } as AxiosRequestConfig;
+    return this.request(config);
   }
 
-  delete (url: string, options: AxiosRequestConfig = {}): Promise<any> {
+  delete(url: string, options: AxiosRequestConfig = {}): Promise<any> {
     const config = {
       url,
-      method: 'delete',
-      ...options
-    } as AxiosRequestConfig
-    return this.request(config)
+      method: "delete",
+      ...options,
+    } as AxiosRequestConfig;
+    return this.request(config);
   }
 }
