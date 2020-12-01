@@ -33,6 +33,7 @@ const config: NuxtConfig = {
     "~/plugins/property.ts",
     "~/plugins/libs.ts",
     "~/plugins/persistedstate.ts",
+    "~/plugins/ga.ts",
   ],
   buildModules: [
     "@nuxtjs/eslint-module",
@@ -62,14 +63,6 @@ const config: NuxtConfig = {
       },
     ],
   ],
-  googleAnalytics: {
-    id: GA,
-    dev: false,
-    debug: {
-      enabled: !isProduct,
-      sendHitTask: isProduct,
-    },
-  },
   vuetify: {
     customVariables: ["~/styles/variables.scss"],
     defaultAssets: false,
