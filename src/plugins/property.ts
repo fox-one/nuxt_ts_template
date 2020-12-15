@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Plugin } from "@nuxt/types";
-import createApiService from "@/services/createApiService";
+import createApiService from "~/apis";
 import utils from "@/utils";
 
 declare module "vue/types/vue" {
@@ -18,7 +19,6 @@ declare module "@nuxt/types" {
 }
 
 declare module "vuex/types/index" {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Store<S> {
     $utils: typeof utils;
     $apis: ReturnType<typeof createApiService>;
@@ -26,7 +26,7 @@ declare module "vuex/types/index" {
 }
 
 const plugin: Plugin = ({ app }, inject) => {
-  inject("apis", createApiService(app));
+  inject("apis", createApiService());
   inject("utils", utils);
 };
 

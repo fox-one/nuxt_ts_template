@@ -3,7 +3,7 @@ export function errorHandler(
   error: { message: string; code: string | number },
 ) {
   const $toast = vue.$utils.helper.toast;
-  const fallback = "未知错误";
+  const fallback = "Unknown Error";
   const message = `${error.code || ""} ${error.message || fallback}`;
   $toast(vue, { message, color: "error" });
 }

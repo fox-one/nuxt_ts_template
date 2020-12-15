@@ -26,15 +26,12 @@
     "@nuxtjs/axios": "5.8.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.2.2",
-    "animate.css": "^3.7.2",
-    "mockjs": "^1.0.1-beta3",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.4.1",
     "typescript": "^4.0.3",
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.2.2",
     "vuetify": "^2.1.5",
-    "vuex-class": "^0.3.2",
     "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {

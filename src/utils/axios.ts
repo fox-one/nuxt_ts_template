@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
 
-export default class Http {
+export default class AxiosClient {
   instance: AxiosInstance;
 
   constructor(defaults, requestInterceptors, responseInterceptors) {

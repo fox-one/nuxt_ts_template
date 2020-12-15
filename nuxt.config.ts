@@ -1,4 +1,4 @@
-import { NuxtConfig } from "@nuxt/types";
+import { NuxtConfig } from "~/apis/node_modules/@nuxt/types";
 import i18n from "./src/i18n";
 import { isProduct, GA } from "./src/constants";
 
