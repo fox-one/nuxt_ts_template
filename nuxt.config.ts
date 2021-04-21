@@ -3,7 +3,7 @@ import i18n from "./src/i18n";
 import { isProduct, GA } from "./src/constants";
 
 const config: NuxtConfig = {
-  mode: "spa",
+  ssr: false,
   router: {
     mode: "hash",
   },
@@ -48,7 +48,6 @@ const config: NuxtConfig = {
   ],
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/google-analytics",
     "@nuxtjs/dotenv",
     [
       "nuxt-i18n",
