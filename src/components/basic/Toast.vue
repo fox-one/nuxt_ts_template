@@ -4,7 +4,7 @@
     :color="bindSnackbar.color"
     :timeout="3000"
     top
-    style="top: 60px;"
+    style="top: 60px"
   >
     {{ bindSnackbar.message }}
   </v-snackbar>
