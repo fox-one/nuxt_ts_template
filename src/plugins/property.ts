@@ -1,5 +1,5 @@
 import { Plugin } from "@nuxt/types";
-import createApiService from "@/services/createApiService";
+import createApiService from "~/services/create";
 import utils from "@/utils";
 
 declare module "vue/types/vue" {

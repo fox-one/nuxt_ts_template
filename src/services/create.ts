@@ -8,13 +8,13 @@ import { API_BASE } from "@/constants";
 function generateStructureInterceptor(app: NuxtAppOptions) {
   return [
     (res) => {
-      if (res && res.data && res.data.code) {
+      if (res?.data?.code) {
         return Promise.reject(res.data);
       }
       return res.data;
     },
     (error) => {
-      if (error.response && error.response.data) {
+      if (error?.response?.data) {
         const status = error.response.status;
         if (status === 401) {
           app.store!.dispatch("auth/logout");
@@ -22,7 +22,7 @@ function generateStructureInterceptor(app: NuxtAppOptions) {
         const { code, message } = error.response.data;
         return Promise.reject({ code, message });
       } else {
-        return Promise.reject({ code: -1 });
+        return Promise.reject(error);
       }
     },
   ];

@@ -9,8 +9,6 @@ const config: NuxtConfig = {
   },
   srcDir: "./src",
   head: {
-    titleTemplate: "%s - " + process.env.npm_package_name,
-    title: process.env.npm_package_name || "",
     meta: [
       { charset: "utf-8" },
       {
@@ -28,13 +26,7 @@ const config: NuxtConfig = {
   },
   loading: { color: "#fff" },
   css: ["~/styles/index.scss"],
-  plugins: [
-    "~/plugins/components.ts",
-    "~/plugins/property.ts",
-    "~/plugins/libs.ts",
-    "~/plugins/persistedstate.ts",
-    "~/plugins/ga.ts",
-  ],
+  plugins: ["~/plugins/property.ts", "~/plugins/libs.ts"],
   buildModules: [
     "@nuxtjs/eslint-module",
     [
@@ -48,6 +40,7 @@ const config: NuxtConfig = {
   ],
   modules: [
     "@nuxtjs/axios",
+    "@nuxtjs/google-analytics",
     "@nuxtjs/dotenv",
     [
       "nuxt-i18n",
@@ -62,6 +55,14 @@ const config: NuxtConfig = {
       },
     ],
   ],
+  googleAnalytics: {
+    id: GA,
+    dev: false,
+    debug: {
+      enabled: !isProduct,
+      sendHitTask: isProduct,
+    },
+  },
   vuetify: {
     customVariables: ["~/styles/variables.scss"],
     defaultAssets: false,
@@ -69,7 +70,7 @@ const config: NuxtConfig = {
     optionsPath: "./vuetify.options.ts",
   },
   build: {
-    transpile: ["vuetify"],
+    transpile: ["vuetify", "@foxone/uikit"],
   },
   env: {
     TOKEN: process.env.TOKEN || "",

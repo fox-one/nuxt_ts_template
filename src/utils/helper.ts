@@ -1,13 +1,14 @@
 export function errorHandler(
   vue: Vue,
-  error: { message: string; code: string | number },
+  error: { message?: string; msg?: string; code: string | number },
 ) {
-  const $toast = vue.$utils.helper.toast;
-  const fallback = "未知错误";
-  const message = `${error.code || ""} ${error.message || fallback}`;
-  $toast(vue, { message, color: "error" });
+  const fallback = "Unknown error";
+  const message = `${error.code || ""} ${
+    error.message || error.msg || fallback
+  }`;
+  toast(vue, { message, color: "error" });
 }
 
 export function toast(vue: Vue, data: { message: string; color?: string }) {
-  vue.$store.commit("app/toast", data);
+  vue.$store.commit("app/SET_TOAST", data);
 }

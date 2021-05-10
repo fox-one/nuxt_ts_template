@@ -1,8 +1,5 @@
 <template>
-  <v-container>
-    <h1>HELLO</h1>
-    <f-tip type="info"> this a tip </f-tip>
-  </v-container>
+  <v-container> </v-container>
 </template>
 
 <script lang="ts">

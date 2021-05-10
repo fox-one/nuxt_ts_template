@@ -1,31 +1,25 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
+    <default-app-bar />
 
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-app-bar>
     <v-content>
       <nuxt />
     </v-content>
-    <toast />
+
+    <modals />
   </v-app>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import DefaultAppBar from "./default/NavBar.vue";
+import Modals from "./modals/index.vue";
 
 @Component({
-  middleware: "i18n",
+  components: {
+    DefaultAppBar,
+    Modals,
+  },
 })
 class DefaultLayout extends Vue {}
 export default DefaultLayout;
