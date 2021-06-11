@@ -4,12 +4,12 @@ import type { RootState } from "../types";
 
 import { GetterTypes, MutationTypes } from "./types";
 
-const state: State = {
+const state = (): State => ({
   token: "",
-};
+});
 
 const getters: GetterTree<State, RootState> = {
-  [GetterTypes.IS_LOGGED]() {
+  [GetterTypes.IS_LOGGED](state) {
     return Boolean(state.token);
   },
 };
