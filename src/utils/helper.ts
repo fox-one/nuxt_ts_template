@@ -1,3 +1,5 @@
+import { AppModuleKey, MutationTypes } from "@/store/app/types";
+
 export function errorHandler(
   vue: Vue,
   error: { message?: string; msg?: string; code: string | number },
@@ -10,5 +12,5 @@ export function errorHandler(
 }
 
 export function toast(vue: Vue, data: { message: string; color?: string }) {
-  vue.$store.commit("app/SET_TOAST", data);
+  vue.$store.commit(AppModuleKey + MutationTypes.SET_TOAST, data);
 }

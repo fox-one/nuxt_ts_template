@@ -2,7 +2,7 @@ import type { GetterTree, MutationTree } from "vuex";
 import type { State, Mutations } from "./types";
 import type { RootState } from "../types";
 
-import { GetterTypes } from "./types";
+import { GetterTypes, MutationTypes } from "./types";
 
 const state: State = {
   token: "",
@@ -15,12 +15,14 @@ const getters: GetterTree<State, RootState> = {
 };
 
 export const mutations: MutationTree<State> & Mutations = {
-  SET_TOKEN(state, token) {
+  [MutationTypes.SET_TOKEN](state, token) {
     state.token = token;
   },
 };
 
 export default {
+  namespaced: true,
   state,
   getters,
+  mutations,
 };

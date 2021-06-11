@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { AuthModuleKey, MutationTypes } from "@/store/auth/types";
 
 @Component({
   head() {
@@ -15,6 +16,10 @@ import { Component, Vue } from "vue-property-decorator";
 class IndexPage extends Vue {
   get title() {
     return "hello";
+  }
+
+  mounted() {
+    this.$store.commit(AuthModuleKey + MutationTypes.SET_TOKEN, "sadf");
   }
 }
 export default IndexPage;
