@@ -4,7 +4,6 @@ import utils from "@/utils";
 
 declare module "vue/types/vue" {
   interface Vue {
-    title?: string;
     $utils: typeof utils;
     $apis: ReturnType<typeof createApiService>;
   }

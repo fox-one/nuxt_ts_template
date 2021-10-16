@@ -6,13 +6,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { AuthModuleKey, MutationTypes } from "@/store/auth/types";
 
-@Component({
-  head() {
-    return {
-      title: this.title,
-    };
-  },
-})
+@Component
 class IndexPage extends Vue {
   get title() {
     return "hello";
