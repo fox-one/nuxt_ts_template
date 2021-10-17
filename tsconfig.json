@@ -17,7 +17,7 @@
       "~/*": ["src/*"],
       "@/*": ["src/*"]
     },
-    "types": ["nuxt-i18n", "@types/node", "@nuxt/types"]
+    "types": ["nuxt-i18n", "@types/node", "@nuxt/types", "vuetify"]
   },
   "exclude": ["node_modules"]
 }
