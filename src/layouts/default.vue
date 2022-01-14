@@ -14,19 +14,17 @@
         <span class="mr-2">Latest Release</span>
       </v-btn>
     </v-app-bar>
-    <v-content>
+
+    <v-main>
       <nuxt />
-    </v-content>
-    <toast />
+    </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component({
-  middleware: "i18n",
-})
+@Component
 class DefaultLayout extends Vue {}
 export default DefaultLayout;
 </script>

@@ -1,13 +1,12 @@
-export function errorHandler(
-  vue: Vue,
-  error: { message: string; code: string | number },
-) {
-  const $toast = vue.$utils.helper.toast;
-  const fallback = "Unknown Error";
-  const message = `${error.code || ""} ${error.message || fallback}`;
-  $toast(vue, { message, color: "error" });
-}
+export function errorHandler(vm: Vue, error: any) {
+  const code = error.code;
 
-export function toast(vue: Vue, data: { message: string; color?: string }) {
-  vue.$store.commit("app/toast", data);
+  let locale = "";
+  if (code && vm.$t(`errorcode.${code}`) !== code) {
+    locale = vm.$t(`errorcode.${code}`) as string;
+  }
+
+  const message = error.message || error.msg || locale || "Unknown Error";
+
+  vm.$uikit.toast.error({ message: `${code} ${message}` });
 }

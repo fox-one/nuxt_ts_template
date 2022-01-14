@@ -1,36 +1,18 @@
-import zh from "vuetify/es5/locale/zh-Hans";
-import en from "vuetify/es5/locale/en";
-import ja from "vuetify/es5/locale/ja";
-import enUikit from "@foxone/uikit/src/locales/en";
-import jaUikit from "@foxone/uikit/src/locales/ja";
-import zhUikit from "@foxone/uikit/src/locales/zh-Hans";
+import UIKit from "@foxone/uikit";
+import { mergeDeep } from "vuetify/lib/util/helpers";
 
-export default function({ store }) {
-  const isDark = store.state.app?.dark || false;
+export default function ({ store }) {
+  const isDark = store.state.app.settings.dark;
 
-  return {
-    icons: {},
+  const options = {
     theme: {
       dark: isDark,
-      options: {
-        customProperties: true,
-      },
-    },
-    lang: {
-      locales: {
-        zh: {
-          ...zh,
-          ...zhUikit,
-        },
-        en: {
-          ...en,
-          ...enUikit,
-        },
-        ja: {
-          ...ja,
-          ...jaUikit,
-        },
+      themes: {
+        light: {},
+        dark: {},
       },
     },
   };
+
+  return mergeDeep(UIKit.preset, options);
 }

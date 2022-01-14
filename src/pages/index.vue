@@ -1,22 +1,14 @@
 <template>
   <v-container>
     <h1>HELLO</h1>
-    <f-tip type="info">
-      this a tip
-    </f-tip>
+    <f-tip type="info"> this a tip </f-tip>
   </v-container>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component({
-  head() {
-    return {
-      title: this.title,
-    };
-  },
-})
+@Component
 class IndexPage extends Vue {
   get title() {
     return "hello";
