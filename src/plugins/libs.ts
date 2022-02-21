@@ -1,16 +1,17 @@
 import Vue from "vue";
-import Uikit from "@foxone/uikit";
-import VueGtag from "vue-gtag";
-import { GA } from "@/constants";
+import UIKit from "@foxone/uikit";
 
-export default ({ app }) => {
-  Vue.use(Uikit);
+import type { Plugin } from "@nuxt/types";
 
-  Vue.use(
-    VueGtag,
-    {
-      config: { id: GA },
-    },
-    app.router,
-  );
+import "@foxone/uikit/build/index.min.css";
+
+const plugin: Plugin = ({ app }) => {
+  Vue.use(UIKit);
+  Vue.use(UIKit.Toast, app.vuetify, {
+    top: false,
+    centered: true,
+  });
+  Vue.use(UIKit.Dialog, app.vuetify, { flat: true });
 };
+
+export default plugin;

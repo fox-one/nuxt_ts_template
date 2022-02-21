@@ -1,23 +1,17 @@
-import type { RootState } from "./types";
-import type { ModuleTree } from "vuex";
-
 import Vue from "vue";
 import Vuex from "vuex";
-import createPersistedState from "vuex-persistedstate";
-import app from "./app";
-import auth from "./auth";
+import pathify from "vuex-pathify";
+import modules from "./modules";
 
-export default function () {
+// options
+pathify.options.mapping = "standard";
+pathify.options.deep = 2;
+
+export default function() {
   Vue.use(Vuex);
 
-  const modules: ModuleTree<RootState> = {
-    app,
-    auth,
-  };
-
   return new Vuex.Store({
-    state: {},
     modules,
-    plugins: [createPersistedState({ key: "vuex", paths: ["auth"] })],
+    plugins: [pathify.plugin],
   });
 }

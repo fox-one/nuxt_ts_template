@@ -2,11 +2,18 @@
   <v-app>
     <default-app-bar />
 
-    <v-content>
-      <nuxt />
-    </v-content>
+      <v-btn
+        text
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2">Latest Release</span>
+      </v-btn>
+    </v-app-bar>
 
-    <modals />
+    <v-main>
+      <nuxt />
+    </v-main>
   </v-app>
 </template>
 
@@ -15,12 +22,7 @@ import { Component, Vue } from "vue-property-decorator";
 import DefaultAppBar from "./default/NavBar.vue";
 import Modals from "./modals/index.vue";
 
-@Component({
-  components: {
-    DefaultAppBar,
-    Modals,
-  },
-})
+@Component
 class DefaultLayout extends Vue {}
 export default DefaultLayout;
 </script>
