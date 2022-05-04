@@ -20,8 +20,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@foxone/icons": "^3.0.1-52",
-    "@foxone/uikit": "^3.0.1-58",
+    "@foxone/icons": "^3.1.3-1",
+    "@foxone/uikit": "^3.1.5-0",
     "@foxone/utils": "^0.2.21",
     "@nuxtjs/axios": "5.8.0",
     "@nuxtjs/dotenv": "^1.4.1",
