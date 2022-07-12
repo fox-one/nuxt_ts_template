@@ -1,10 +1,10 @@
 import en from "./lang/en-US.json";
-import zh from "./lang/zh-TW.json";
+import es from "./lang/es-ES.json";
 
 export default {
   fallbackLocale: "en",
   messages: {
     en,
-    zh,
+    es,
   },
 };

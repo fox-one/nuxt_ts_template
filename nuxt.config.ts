@@ -4,8 +4,9 @@ import i18n from "./src/i18n";
 const config: NuxtConfig = {
   ssr: false,
   router: {
-    mode: "hash",
+    mode: "history",
   },
+  target: "static",
   srcDir: "./src",
   head: {
     title: "nuxt-ts-template-source",
@@ -24,6 +25,10 @@ const config: NuxtConfig = {
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+      },
+      {
         rel: "stylesheet",
         href: "https://static.fox.one/font/inter/style.css",
       },
@@ -38,6 +43,7 @@ const config: NuxtConfig = {
   css: ["~/styles/index.scss"],
   plugins: ["~/plugins/property.ts", "~/plugins/libs.ts", "~/plugins/persistedstate.ts"],
   buildModules: [
+    "@nuxtjs/pwa",
     "@nuxtjs/eslint-module",
     [
       "@nuxt/typescript-build",
@@ -48,21 +54,30 @@ const config: NuxtConfig = {
     ],
     "@nuxtjs/vuetify",
   ],
-  modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/dotenv",
-    [
-      "nuxt-i18n",
-      {
-        vueI18n: i18n,
-        defaultLocale: "en",
-        strategy: "no_prefix",
-        detectBrowserLanguage: false,
-        parsePages: false,
-        seo: false,
-      },
+  modules: ["@nuxtjs/axios", "@nuxtjs/dotenv", "@nuxtjs/i18n", "@nuxtjs/sitemap"],
+  i18n: {
+    baseUrl: "https://pando.im",
+    locales: [
+      { code: "en", iso: "en-US" },
+      { code: "es", iso: "es-ES" },
     ],
-  ],
+    defaultLocale: "en",
+    vueI18n: i18n,
+  },
+  sitemap: {
+    hostname: "https://pando.im",
+    i18n: {
+      locales: ["en", "es"],
+    },
+  },
+  pwa: {
+    manifest: {
+      name: "Pando Product",
+      short_name: "Pando",
+      lang: "en",
+      theme_color: "#FFF",
+    },
+  },
   vuetify: {
     customVariables: ["~/styles/variables.scss"],
     defaultAssets: false,

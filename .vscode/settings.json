@@ -11,5 +11,6 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "i18n-ally.localesPaths": "src/lang"
+  "i18n-ally.localesPaths": "src/lang",
+  "i18n-ally.keystyle": "nested"
 }
