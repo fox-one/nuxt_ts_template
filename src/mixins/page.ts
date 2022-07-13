@@ -7,7 +7,6 @@ export interface Page extends Vue {
   htmlTitle?: string;
   shortDesc?: string;
   desc?: string;
-  canonicalLink?: string;
   jsonLd?: any;
   setLang: () => void;
   setJsonLd: () => void;
@@ -68,7 +67,11 @@ export default class PageView extends Vue {
     return "";
   }
 
-  get description() {
+  get desc() {
+    return "";
+  }
+
+  get shortDesc() {
     return "";
   }
 
@@ -90,10 +93,6 @@ export default class PageView extends Vue {
 
   get sidebarNav() {
     return "";
-  }
-
-  get canonicalLink() {
-    return `${window.location.origin}${window.location.pathname}${window.location.search}`;
   }
 
   setJsonLd() {
