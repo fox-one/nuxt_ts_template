@@ -35,7 +35,7 @@ const config: NuxtConfig = {
     ],
     script: [
       {
-        src: "https://polyfill.io/v3/polyfill.min.js?features=Intl",
+        src: "https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=Intl",
       },
     ],
   },
